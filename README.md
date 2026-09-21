@@ -8,6 +8,9 @@ The public website is [Open Orchestrators](https://openorchestrators.org/). This
 
 ## Latest Additions
 
+- [Agon](https://github.com/AutoResearch-Factory/Agon) ([Paper](https://arxiv.org/abs/2606.24177)) - Autonomous research system that coordinates scientist, coder, and auditor loops from topic to idea, proposal, experiment, and paper.
+- [Agent Swarm](https://agent-swarm.dev) ([GitHub](https://github.com/desplega-ai/agent-swarm), [Docs](https://docs.agent-swarm.dev), [Dashboard](https://app.agent-swarm.dev)) - MIT-licensed lead/worker orchestration framework where a lead agent receives tasks from Slack, GitHub, GitLab, Linear, Jira, email, WhatsApp, or the API and delegates to worker agents running in isolated Docker environments with persistent vector-searchable memory, persistent SOUL/IDENTITY identity, DAG workflows with HITL gates, scheduled tasks, MCP servers, and harness-agnostic execution across Claude Code, Codex, pi-mono, Devin, Claude Managed Agents, and opencode.
+- [the-perfect-orchestrator](https://github.com/daman8271/the-perfect-orchestrator) ([Website](https://the-perfect-orchestrator.vercel.app/), [Recorded fleet run](https://github.com/daman8271/the-perfect-orchestrator/tree/main/docs/realrun-2026-06-06)) - MIT-licensed bash and tmux harness where one lead Claude Code session spawns, briefs, monitors, and adversarially verifies multiple autonomous worker sessions, with plain-file coordination and no daemons.
 - [Helmor](https://helmor.ai/) ([GitHub](https://github.com/dohooo/helmor), [Releases](https://github.com/dohooo/helmor/releases)) - Apache-2.0 local-first IDE and workbench for orchestrating Claude Code, Codex, and other coding agents across worktrees through planning, running, review, testing, merge, and shipping loops.
 - [Open Swarm](https://openswarm.com/) ([GitHub](https://github.com/openswarm-ai/openswarm), [Docs](https://docs.openswarm.com), [Releases](https://github.com/openswarm-ai/openswarm/releases)) - MIT-licensed local mission-control center for launching, monitoring, approving, and coordinating multiple AI agents in parallel.
 - [oh-my-codex](https://github.com/Yeachan-Heo/oh-my-codex) ([Website](https://yeachan-heo.github.io/oh-my-codex-website/), [npm](https://www.npmjs.com/package/oh-my-codex)) - MIT-licensed workflow layer for OpenAI Codex CLI with stronger default sessions, reusable skills, native hooks, HUD/status surfaces, project guidance, and team-style execution commands.
@@ -29,6 +32,7 @@ The public website is [Open Orchestrators](https://openorchestrators.org/). This
 - [SIDJUA](https://www.sidjua.com/) ([GitHub](https://github.com/GoetzKohlberg/sidjua)) - Governance-first AI agent orchestration platform with pre-action controls, budgets, approvals, classifications, and audit trails.
 - [Agentix Labs](https://www.agentixlabs.com/) - Implementation services entry, tracked separately from orchestrators because it helps teams deploy and harden production agent systems.
 - [SettleBridge](https://settlebridge.ai/) ([GitHub org](https://github.com/a2a-settlement)) - Trust and policy gateway for agent-to-agent settlement, reputation checks, spending limits, provenance requirements, escrow, dispute resolution, marketplace bounties, and cryptographic audit trails.
+- [handoff](https://github.com/dazuiba/handoff) ([GitHub](https://github.com/dazuiba/handoff)) - MIT cross-agent task dispatcher; delegate work to DeepSeek V4, Codex, or Opus without leaving your Claude Code / Codex session. Runs in background, result returns automatically.
 
 ## Contents
 
@@ -66,13 +70,16 @@ Tools for running multiple coding agents simultaneously, usually with git worktr
 - [Sandcastle](https://github.com/mattpocock/sandcastle) ([npm](https://www.npmjs.com/package/@ai-hero/sandcastle)) - MIT-licensed TypeScript library and CLI for orchestrating AI coding agents in isolated sandboxes with branch strategies, hooks, logs, templates, and merge-back workflows.
 - [oh-my-codex](https://github.com/Yeachan-Heo/oh-my-codex) ([Website](https://yeachan-heo.github.io/oh-my-codex-website/), [npm](https://www.npmjs.com/package/oh-my-codex)) - Workflow layer for OpenAI Codex CLI with reusable skills, native hooks, HUD/status surfaces, project guidance, and `$team`/`$ralph` execution commands.
 - [Vibe Kanban](https://vibekanban.com/) ([GitHub](https://github.com/BloopAI/vibe-kanban)) - Kanban workspace for planning issues, running coding agents in branches with terminals and dev servers, reviewing diffs, previewing apps, opening pull requests, and merging finished work.
+- [the-perfect-orchestrator](https://github.com/daman8271/the-perfect-orchestrator) ([Website](https://the-perfect-orchestrator.vercel.app/)) - MIT-licensed bash and tmux harness where one lead Claude Code session spawns, briefs, monitors, and adversarially verifies multiple autonomous worker sessions through plain-file coordination, with no daemons.
 
 ## Multi-Agent Platforms And Builders
 
 Frameworks and product surfaces for creating agents, teams, workflows, chatflows, agent apps, or production agent runtimes.
 
+- [Agon](https://github.com/AutoResearch-Factory/Agon) ([Paper](https://arxiv.org/abs/2606.24177)) - Autonomous research system that coordinates scientist, coder, and auditor loops from topic to idea, proposal, experiment, and paper.
 - [Agno](https://agno.com/) ([GitHub](https://github.com/agno-agi/agno)) - Production runtime for agentic software with agents, teams, workflows, and AgentOS services.
 - [Agent Office Suite](https://www.agentofficesuite.com/) ([GitHub](https://github.com/manpoai/AgentOfficeSuite), [Manpo X](https://x.com/manpoai)) - Self-hosted office suite where agents collaborate with humans on docs, databases, slides, and flowcharts through MCP, contextual comments, version history, and traceable edits.
+- [Agent Swarm](https://agent-swarm.dev) ([GitHub](https://github.com/desplega-ai/agent-swarm), [Docs](https://docs.agent-swarm.dev)) - MIT-licensed lead/worker orchestration framework where a lead agent receives tasks from Slack, GitHub, GitLab, Linear, Jira, email, WhatsApp, or the API and delegates to worker agents running in isolated Docker environments with persistent vector-searchable memory, DAG workflows with HITL gates, scheduled tasks, MCP servers, and harness-agnostic execution across Claude Code, Codex, pi-mono, Devin, Claude Managed Agents, and opencode.
 - [Cabinet](https://runcabinet.com/) ([GitHub](https://github.com/hilash/cabinet)) - AI-first knowledge base where files live on disk and agents help with execution.
 - [Dify](https://dify.ai/) ([GitHub](https://github.com/langgenius/dify)) - Agentic workflow builder that combines workflows, chatflows, apps, and knowledge systems.
 - [Flowise](https://flowiseai.com/) ([GitHub](https://github.com/FlowiseAI/Flowise)) - Visual builder for AI agents and orchestration flows.
@@ -83,6 +90,7 @@ Frameworks and product surfaces for creating agents, teams, workflows, chatflows
 - [SIDJUA](https://www.sidjua.com/) ([GitHub](https://github.com/GoetzKohlberg/sidjua)) - Governance-first AI agent orchestration platform where policy, approval, budget, classification, and audit checks run before agent actions execute.
 - [Sim](https://www.sim.ai/) ([GitHub](https://github.com/simstudioai/sim)) - Open-source AI agent platform for building agents with integrations, workflows, knowledge bases, and docs.
 - [SwarmClaw](https://www.swarmclaw.ai/) ([GitHub](https://github.com/swarmclawai/swarmclaw)) - Self-hosted AI agent runtime for autonomous agents, delegated work, schedules, provider management, and chat-platform connectors.
+- [NarraNexus](https://github.com/NetMindAI-Open/NarraNexus) - Open-source AI agent team workspace by NetMind.AI whose agents remember, collaborate, and use tools from day one.
 
 ## Coordination And Team Systems
 
@@ -92,6 +100,7 @@ Systems where the central object is the team, company, room, protocol, role, goa
 - [Squad](https://bradygaster.github.io/squad/) ([GitHub](https://github.com/bradygaster/squad)) - Alpha GitHub Copilot-based system where specialist agents live in the repo, keep memory, share decisions, route work through a coordinator, and run in parallel.
 - [Culture](https://culture.dev/) ([GitHub](https://github.com/agentculture/culture)) - Coordination-oriented system with rooms, protocol docs, agent lifecycle patterns, and multiple clients.
 - [Paperclip](https://paperclip.ing/) ([GitHub](https://github.com/paperclipai/paperclip)) - Open-source orchestration for zero-human companies, centered on AI employees, goals, and jobs.
+- [Okto Nexus](https://oktolabs.ai/platform/nexus/) ([GitHub](https://github.com/OktoLabsAI/okto-nexus)) - Elastic-2.0 local-first MCP coordination hub where agents get durable identities, messaging, single-winner handoff claims, and human-in-the-loop approval on risky actions.
 
 ## Not Open But Important
 
@@ -116,6 +125,7 @@ Policy, permission, approval, budget, trust, reputation, settlement, and audit l
 - [Code Atelier Governance SDK](https://www.codeatelier.tech/governance) - Python SDK for pre-execution governance gates around AI agents, backed by Postgres.
 - [Veto](https://veto.so/) ([GitHub](https://github.com/PlawIO/veto)) - Apache-2.0 authorization layer for AI agent tool calls, with TypeScript and Python SDKs, YAML policies, approval routing, and audit logs. Veto Cloud is commercial.
 - [SettleBridge](https://settlebridge.ai/) ([GitHub org](https://github.com/a2a-settlement)) - Trust and policy gateway for agent-to-agent settlement, including reputation thresholds, spending limits, provenance requirements, escrow, dispute resolution, marketplace bounties, and cryptographic audit trails. The related A2A Settlement repo is MIT-licensed; SettleBridge's public license metadata is not fully consistent yet.
+- [Okto Pulse](https://oktolabs.ai/platform/pulse/) ([GitHub](https://github.com/OktoLabsAI/okto-pulse)) - Elastic-2.0 local-first SDLC workbench with 17 enforced governance gates for AI coding agents, including independent validation, blocking evidence requirements, and spec-coverage checks before work reaches done.
 
 ### Commercial and platform governance layers
 
@@ -127,6 +137,7 @@ Tools that are not orchestrators themselves, but make multi-agent systems easier
 
 - [Agent Analytics](https://agentanalytics.sh/) - Web analytics for builders that Claude Code, Codex, Cursor, OpenClaw, Paperclip, and similar AI agents can use.
 - [ClawTrace](https://www.clawtrace.ai/?ref=producthunt) - Observability for OpenClaw agents that shows what failed, where spend leaked, and how to improve runs.
+- [agenttrace](https://github.com/luoyuctl/agenttrace) - Local TUI observability for AI coding-agent sessions, tokens, cost, tool failures, latency, anomalies, diffs, and CI evidence.
 - [Companies.sh](https://companies.sh/) - Reusable companies for AI agents: pre-built organizations that can be installed with a single command.
 
 ## Implementation Services
