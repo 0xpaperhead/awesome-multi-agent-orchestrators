@@ -523,6 +523,13 @@ const fusionScreenshots = [
 ];
 const agentlasOsScreenshots: OrchestratorScreenshot[] = [];
 
+const fractalScreenshots = [
+  {
+    ...screenshot("fractal", "fractal", "fractal GitHub repository", "https://github.com/plasma-ai/fractal"),
+    src: "/images/players/fractal/fractal-platform-context.png"
+  }
+];
+
 export const orchestrators: OrchestratorEntry[] = [
   {
     slug: "superset",
@@ -2683,6 +2690,36 @@ export const orchestrators: OrchestratorEntry[] = [
       ["a user asks Orkas to research, plan, build, or revise a website, docs path, onboarding flow, app surface, or growth experiment", "the Commander dispatches specialist agents and the finished change ships", "the changed surface reports visits, sources, CTA clicks, signup, activation, retention, funnels, and experiment events to Agent Analytics", "a later Orkas task reads those outcomes and chooses the next improvement from measured user behavior"],
       "Install Agent Analytics on the user-facing surface Orkas agents change. Agent Analytics measures outcomes after deployment; it does not replace Orkas conversations, plans, local files, private agent memory, or execution logs.",
       "Orkas-built page, traffic source, CTA click, signup, activation event, funnel step, retention signal, or shipped experiment", orkasScreenshots
+    )
+  },
+  {
+    slug: "fractal",
+    rank: 31,
+    title: "fractal",
+    githubRepo: "plasma-ai/fractal",
+    accent: "emerald",
+    mark: { kind: "monogram", value: "FR", label: "fractal monogram" },
+    summary: "An Apache-2.0 CLI and terminal UI for hierarchical loops of coding agents, with recursive delegation across separate git worktrees.",
+    note: "Centers orchestration on recursive agent trees, per-node worktrees, multiple coding-agent backends, and hard caps on iterations, depth, children, cost, and time.",
+    overview: [
+      "fractal is an Apache-2.0 orchestrator for autonomous coding-agent loops. Each node works toward a goal in its own git worktree and can spawn child nodes for separable subtasks, so the execution tree grows with the problem.",
+      "It belongs in Open Orchestrators because delegation and bounded execution are the core behavior: operators set caps on iterations, depth, children, cost, and time; steer or stop nodes; and inspect runs, messages, costs, and state in a live terminal UI backed by local SQLite.",
+      "The CLI supports Claude Code, Codex, Grok Build, OpenCode, and Oh My Pi as per-node agent backends."
+    ],
+    bestFor: ["Hierarchical coding-agent delegation", "Recursive worktree-based execution", "Bounded autonomous agent loops"],
+    tags: ["coding agents", "hierarchical orchestration", "worktrees", "terminal UI", "Apache-2.0"],
+    links: [
+      { label: "GitHub", href: "https://github.com/plasma-ai/fractal", emphasis: "primary" },
+      { label: "Documentation", href: "https://docs.plasma.ai/fractal" },
+      { label: "PyPI", href: "https://pypi.org/project/plasma-fractal/" }
+    ],
+    screenshots: fractalScreenshots,
+    agentAnalytics: agentAnalyticsSection(
+      "fractal", "fractal",
+      "fractal delegates coding work across a recursive tree of bounded agent loops. Agent Analytics reports user behavior on the deployed surfaces those runs change.",
+      ["a fractal root node plans a website, docs, onboarding, app, or product change and delegates separable work to child nodes", "the completed changes are reviewed, merged, and deployed to the user-facing surface", "the changed surface reports visits, sources, CTA clicks, signup, activation, retention, funnels, and experiment events to Agent Analytics", "the operator uses those outcomes to scope the next bounded fractal run"],
+      "Install Agent Analytics on the deployed surfaces fractal agents change. Agent Analytics measures user behavior after deployment; it does not replace fractal's local run state, message history, cost tracking, or terminal monitoring.",
+      "fractal-managed page, docs path, traffic source, CTA click, signup, activation event, funnel step, experiment, or shipped change", fractalScreenshots
     )
   }
 ];
