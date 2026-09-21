@@ -471,6 +471,12 @@ const agentRqScreenshots = [
   }
 ];
 
+const fusionScreenshots = [
+  {
+    ...screenshot("fusion", "Fusion", "Fusion website", "https://runfusion.ai/"),
+    src: "/images/players/fusion/fusion-platform-context.png"
+  }
+];
 const agentlasOsScreenshots: OrchestratorScreenshot[] = [];
 
 export const orchestrators: OrchestratorEntry[] = [
@@ -2294,6 +2300,29 @@ export const orchestrators: OrchestratorEntry[] = [
     }
   },
   {
+    slug: "fusion",
+    rank: 31,
+    title: "Fusion",
+    githubRepo: "Runfusion/Fusion",
+    accent: "blue",
+    mark: {
+      kind: "image",
+      src: "/logos/fusion.png",
+      label: "Fusion logo"
+    },
+    summary:
+      "An open-source, multi-node agent orchestrator where a planning agent turns a plain-language task into a PROMPT.md plan, then runs plan, review, execute, and review gates for each task in an isolated git worktree, controllable from desktop, web, mobile, or the fn CLI.",
+    note: "Centers orchestration on a kanban board with per-task worktrees, workflow approval gates, hierarchical missions, and any local or cloud model across a synced multi-node mesh.",
+    overview: [
+      "Fusion is an open-source, multi-node agent orchestrator that plans tasks into PROMPT.md specs and runs them through plan, review, execute, and review gates inside isolated git worktrees, controllable from desktop, web, mobile, or the fn CLI.",
+      "It belongs in Open Orchestrators because it coordinates many agents and tasks as shared board state across a synced mesh of peer nodes, with hierarchical missions, inter-agent messaging, and per-project model lanes for local and cloud providers."
+    ],
+    bestFor: ["Parallel coding agents", "Worktree isolation", "Hierarchical missions and planning"],
+    tags: ["coding agents", "worktree isolation", "missions", "multi-node mesh", "open source"],
+    links: [
+      {
+        label: "Website",
+        href: "https://runfusion.ai/",
     slug: "agent-swarm",
     rank: 30,
     title: "Agent Swarm",
@@ -2327,6 +2356,18 @@ export const orchestrators: OrchestratorEntry[] = [
       },
       {
         label: "GitHub",
+        href: "https://github.com/Runfusion/Fusion"
+      }
+    ],
+    screenshots: fusionScreenshots,
+    agentAnalytics: agentAnalyticsSection(
+      "fusion",
+      "Fusion",
+      "Fusion ships tasks autonomously through worktree-isolated workflow gates. Agent Analytics gives the next agent real visitor and conversion data after a merged task reaches a user-facing surface.",
+      ["a task is planned, executed, and reviewed through Fusion's workflow gates in an isolated worktree", "the merged change ships to the website, docs, app, onboarding flow, or support surface", "the changed surface reports visits, sources, signup, activation, retention, or funnel movement to Agent Analytics", "a follow-up agent fetches the outcome report and turns it into the next task or mission"],
+      "Use Agent Analytics after Fusion tasks ship user-facing work so completed tasks and missions are judged by reported web and product outcomes, not only board status.",
+      "Fusion-built page, traffic source, signup, activation event, retention change, or shipped task",
+      fusionScreenshots
         href: "https://github.com/desplega-ai/agent-swarm"
       },
       {
