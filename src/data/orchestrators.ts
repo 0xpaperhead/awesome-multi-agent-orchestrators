@@ -530,6 +530,10 @@ const fractalScreenshots = [
   }
 ];
 
+const tempestScreenshots = [
+  screenshot("tempest", "Tempest", "Tempest GitHub repository", "https://github.com/tempestai-dev/tempest")
+];
+
 export const orchestrators: OrchestratorEntry[] = [
   {
     slug: "superset",
@@ -2720,6 +2724,31 @@ export const orchestrators: OrchestratorEntry[] = [
       ["a fractal root node plans a website, docs, onboarding, app, or product change and delegates separable work to child nodes", "the completed changes are reviewed, merged, and deployed to the user-facing surface", "the changed surface reports visits, sources, CTA clicks, signup, activation, retention, funnels, and experiment events to Agent Analytics", "the operator uses those outcomes to scope the next bounded fractal run"],
       "Install Agent Analytics on the deployed surfaces fractal agents change. Agent Analytics measures user behavior after deployment; it does not replace fractal's local run state, message history, cost tracking, or terminal monitoring.",
       "fractal-managed page, docs path, traffic source, CTA click, signup, activation event, funnel step, experiment, or shipped change", fractalScreenshots
+    )
+  },
+  {
+    slug: "tempest",
+    rank: 32,
+    title: "Tempest",
+    githubRepo: "tempestai-dev/tempest",
+    accent: "violet",
+    mark: { kind: "monogram", value: "Tm", label: "Tempest monogram" },
+    summary: "An Apache-2.0 Tauri-based ADE (Agentic Development Environment) that runs CLI coding agents with 64% fewer tokens via an embedded xterm.js terminal.",
+    note: "Centers orchestration on token intelligence, isolated DB branches per session, and multi-agent session management inside a native desktop environment.",
+    overview: [
+      "Tempest is a Tauri-based desktop ADE for running CLI coding agents such as Claude Code with dramatically reduced token usage. Its embedded xterm.js terminal gives agents a real shell surface while token intelligence trims context overhead by 64%.",
+      "It belongs in Open Orchestrators because it frames coding-agent work as a first-class native desktop operating surface: isolated database branches per agent session, multi-agent session management, and a custom frameless window built specifically for agentic engineering workflows."
+    ],
+    bestFor: ["Token-efficient CLI agent sessions", "Isolated DB branches per agent", "Native desktop ADE for coding agents"],
+    tags: ["ADE", "coding agents", "token intelligence", "Tauri", "xterm.js", "Apache-2.0"],
+    links: [{ label: "GitHub", href: "https://github.com/tempestai-dev/tempest", emphasis: "primary" }],
+    screenshots: tempestScreenshots,
+    agentAnalytics: agentAnalyticsSection(
+      "tempest", "Tempest",
+      "Tempest runs coding agents with fewer tokens and isolated workspaces. Agent Analytics gives those agents user-facing outcome data after a Tempest-built change ships.",
+      ["a builder uses Tempest to run a coding agent session and ship a page, docs update, onboarding change, or product surface", "the changed surface reports visits, sources, CTA clicks, signup, activation, retention, funnels, and experiment events to Agent Analytics", "a follow-up Tempest agent session fetches the Agent Analytics results and compares the shipped path with the prior period", "the builder decides what to improve next from user behavior, closing the agentic development loop"],
+      "Install Agent Analytics on the project surface Tempest agents help ship. The token intelligence and DB isolation features are orthogonal to analytics; Agent Analytics measures user-facing outcomes after the change lands.",
+      "Tempest-built page, traffic source, CTA click, signup, activation event, funnel step, experiment, or shipped agent session", tempestScreenshots
     )
   }
 ];
