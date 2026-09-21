@@ -434,6 +434,8 @@ const vibeKanbanScreenshots = [
   screenshot("vibe-kanban", "Vibe Kanban", "Vibe Kanban website", "https://vibekanban.com/")
 ];
 
+const narranexusScreenshots = [
+  screenshot("narranexus", "NarraNexus", "NarraNexus GitHub repository", "https://github.com/NetMindAI-Open/NarraNexus")
 const parallelCodeScreenshots = [
   screenshot("parallel-code", "Parallel Code", "Parallel Code website", "https://parallelcode.app/")
 ];
@@ -2313,6 +2315,30 @@ export const orchestrators: OrchestratorEntry[] = [
     }
   },
   {
+    slug: "narranexus",
+    rank: 27,
+    title: "NarraNexus",
+    githubRepo: "NetMindAI-Open/NarraNexus",
+    accent: "cyan",
+    mark: {
+      kind: "monogram",
+      value: "NN",
+      label: "NarraNexus monogram"
+    },
+    summary:
+      "An open-source AI agent team workspace by NetMind.AI whose agents remember, collaborate, and use tools from day one.",
+    note:
+      "Centers orchestration on ready-to-run agent teams: memory-aware agents with persistent context, multi-agent collaboration between PM, developer, deployment, research, and custom agents, composable capabilities, and Matrix-based communication.",
+    overview: [
+      "NarraNexus is an open-source AI agent team workspace by NetMind.AI. It is not another framework for wiring agents together, but a team of agents that already remember, collaborate, and use tools from day one.",
+      "It belongs in Open Orchestrators because it provides a complete multi-agent operating environment: agents with persistent memory across sessions, multi-agent collaboration, composable capabilities (Memory, Awareness, Chat, RAG, Jobs, Skills, Social Network, Matrix), MCP tool integrations, and cloud/macOS/local deployment options."
+    ],
+    bestFor: ["Ready-to-run agent teams", "Persistent multi-agent workspaces", "Agent collaboration with memory"],
+    tags: ["multi-agent", "memory", "collaboration", "MCP", "open-source"],
+    links: [
+      {
+        label: "Website",
+        href: "https://github.com/NetMindAI-Open/NarraNexus",
     slug: "fusion",
     rank: 31,
     title: "Fusion",
@@ -2369,6 +2395,22 @@ export const orchestrators: OrchestratorEntry[] = [
       },
       {
         label: "GitHub",
+        href: "https://github.com/NetMindAI-Open/NarraNexus"
+      },
+      {
+        label: "Portal",
+        href: "https://www.narra.nexus/"
+      }
+    ],
+    screenshots: narranexusScreenshots,
+    agentAnalytics: agentAnalyticsSection(
+      "narranexus",
+      "NarraNexus",
+      "NarraNexus gives teams a ready-to-run agent workspace where agents collaborate with persistent memory. Agent Analytics measures whether the agent-driven changes move real users afterward.",
+      ["a NarraNexus agent team collaborates on a website, docs, onboarding flow, product surface, or experiment", "the changed surface reports visits, sources, CTA clicks, signup, activation, retention, or task-completion events to Agent Analytics", "a NarraNexus agent fetches Agent Analytics results after the change ships", "the agent team updates its next task from measured user behavior"],
+      "Instrument the project surface that NarraNexus agents affect. Agent Analytics reads the reported web or product events; it does not replace NarraNexus internal logs or traces.",
+      "NarraNexus-managed page, docs path, traffic source, CTA click, signup, activation event, retention signal, or shipped experiment",
+      narranexusScreenshots
         href: "https://github.com/Runfusion/Fusion"
       }
     ],
