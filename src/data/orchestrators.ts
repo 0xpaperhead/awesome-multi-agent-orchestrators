@@ -175,6 +175,16 @@ export const orchestrationTools: OrchestrationToolEntry[] = [
       "Keeps source code, runtime dependencies, prompts, and credentials on the publishing machine while callers use a lightweight CLI with JSON output, agent identity checks, meaningful exit codes, and bounded conversations. Tracked as an agent capability-sharing and coordination-adjacent tool, not as an orchestrator runtime.",
     tags: ["open source", "local-first", "agent relay", "capability sharing", "CLI"],
     ctaLabel: "Open relay"
+  },
+  {
+    slug: "agent-coordinator",
+    title: "Agent Coordinator",
+    url: "https://github.com/alanhoff/agent-coordinator",
+    sourceName: "Agent Coordinator GitHub repository",
+    mark: "AC",
+    summary: "Per-user Codex skill that represents complex tasks as bounded work graphs and records revisioned local state.",
+    note: "Keeps graph changes, integration, reconciliation, and completion under one parent task; nodes can run inline or through optional specialists, uncertain work is reconciled before retry, and planned checks run again at closeout; this directory tracks it as Codex workflow tooling rather than a standalone orchestrator runtime.",
+    tags: ["Codex", "work graphs", "local state", "reconciliation", "agent workflows"]
   }
 ];
 
