@@ -8,6 +8,7 @@ The public website is [Open Orchestrators](https://openorchestrators.org/). This
 
 ## Latest Additions
 
+- [GraphCode](https://graphcode.app/) ([GitHub](https://github.com/scgopi/GraphCode), [Releases](https://github.com/scgopi/GraphCode/releases)) - FSL-1.1-MIT native macOS workspace that arranges coding-agent sessions into a graph, where every node is a live terminal and hand-off, message, and spawn edges fire unattended when a goal-based loop's shell predicate exits 0.
 - [Crewplane](https://github.com/crewplaneai/crewplane) ([GitHub](https://github.com/crewplaneai/crewplane), [Docs](https://github.com/crewplaneai/crewplane/tree/master/docs)) - Apache-2.0 orchestrator that turns Claude Code, Codex, Gemini CLI, Copilot CLI, and other command-line agents into structured, repeatable Markdown workflows with resumable execution and inspectable local run records.
 - [Agon](https://github.com/AutoResearch-Factory/Agon) ([Paper](https://arxiv.org/abs/2606.24177)) - Autonomous research system that coordinates scientist, coder, and auditor loops from topic to idea, proposal, experiment, and paper.
 - [Agent Swarm](https://agent-swarm.dev) ([GitHub](https://github.com/desplega-ai/agent-swarm), [Docs](https://docs.agent-swarm.dev), [Dashboard](https://app.agent-swarm.dev)) - MIT-licensed lead/worker orchestration framework where a lead agent receives tasks from Slack, GitHub, GitLab, Linear, Jira, email, WhatsApp, or the API and delegates to worker agents running in isolated Docker environments with persistent vector-searchable memory, persistent SOUL/IDENTITY identity, DAG workflows with HITL gates, scheduled tasks, MCP servers, and harness-agnostic execution across Claude Code, Codex, pi-mono, Devin, Claude Managed Agents, and opencode.
@@ -62,6 +63,7 @@ Open Orchestrators is also a lightweight news site for meaningful updates from p
 
 Tools for running multiple coding agents simultaneously, usually with git worktree isolation, terminal/session management, review surfaces, or issue-to-agent routing.
 
+- [GraphCode](https://graphcode.app/) ([GitHub](https://github.com/scgopi/GraphCode), [Releases](https://github.com/scgopi/GraphCode/releases)) - FSL-1.1-MIT native macOS workspace that arranges coding-agent sessions into a graph, where every node is a live terminal and hand-off, message, and spawn edges fire unattended when a goal-based loop's shell predicate exits 0.
 - [Helmor](https://helmor.ai/) ([GitHub](https://github.com/dohooo/helmor)) - Apache-2.0 local-first IDE and workbench for orchestrating Claude Code, Codex, and other coding agents across worktrees through planning, running, review, testing, merge, and shipping loops.
 - [Open Swarm](https://openswarm.com/) ([GitHub](https://github.com/openswarm-ai/openswarm), [Docs](https://docs.openswarm.com)) - MIT-licensed local mission-control center for launching, monitoring, approving, and coordinating multiple AI agents in parallel.
 - [Gas Town](https://github.com/gastownhall/gastown) ([GitHub](https://github.com/gastownhall/gastown)) - Multi-agent workspace manager for Claude Code, GitHub Copilot, Codex, Gemini, and other coding agents with persistent work tracking.
