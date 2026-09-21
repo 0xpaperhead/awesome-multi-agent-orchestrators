@@ -125,6 +125,18 @@ export const orchestrationTools: OrchestrationToolEntry[] = [
     tags: ["observability", "OpenClaw", "tracing"]
   },
   {
+    slug: "agenttrace",
+    title: "agenttrace",
+    url: "https://github.com/luoyuctl/agenttrace",
+    sourceName: "agenttrace GitHub repository",
+    mark: "AT",
+    summary:
+      "Local TUI observability for AI coding-agent sessions, tokens, cost, tool failures, latency, anomalies, diffs, and CI evidence.",
+    note:
+      "Parses local logs from Claude Code, Codex CLI, Gemini CLI, Aider, Cursor exports, OpenClaw, and related coding agents so builders can inspect session health without sending prompts or code to a hosted tracing service.",
+    tags: ["observability", "coding agents", "TUI", "local-first"]
+  },
+  {
     slug: "lanes",
     title: "Lanes",
     url: "https://lanes.sh/",
@@ -181,6 +193,19 @@ export const governanceTools: OrchestrationToolEntry[] = [
       "Adds scope checks, budget caps, human approval tokens, loop detection, agent presence and halt handling, behavioral contracts, and HMAC-chained audit trails for actions routed through the SDK. Tracked as agent-friendly tooling, not an orchestrator runtime.",
     tags: ["open source", "governance", "agent safety", "approvals", "audit trail", "Postgres", "Python"],
     ctaLabel: "Open governance tool"
+  },
+  {
+    slug: "commonground-kernel",
+    title: "CommonGround Kernel",
+    url: "https://github.com/Intelligent-Internet/CommonGround",
+    sourceName: "CommonGround GitHub repository",
+    mark: "CG",
+    summary:
+      "Apache-2.0 public-fact and causal-coordination kernel for human-agent and multi-agent work.",
+    note:
+      "Preserves durable Turn-owned work records, handoff facts, claim fencing, causal lineage, and pull-first recovery across agent runtimes without acting as the orchestrator itself.",
+    tags: ["open source", "Apache-2.0", "public facts", "coordination substrate", "handoffs", "causal lineage", "Python"],
+    ctaLabel: "Open kernel"
   },
   {
     slug: "veto",
@@ -396,6 +421,10 @@ const vibeKanbanScreenshots = [
   screenshot("vibe-kanban", "Vibe Kanban", "Vibe Kanban website", "https://vibekanban.com/")
 ];
 
+const parallelCodeScreenshots = [
+  screenshot("parallel-code", "Parallel Code", "Parallel Code website", "https://parallelcode.app/")
+];
+
 const augmentIntentScreenshots = [
   screenshot("augment-intent", "Augment Code Intent", "Augment Code Intent page", "https://www.augmentcode.com/product/intent")
 ];
@@ -416,6 +445,16 @@ const openHumanScreenshots = [
   {
     ...screenshot("openhuman", "OpenHuman", "OpenHuman docs", "https://tinyhumans.gitbook.io/openhuman/"),
     src: "/images/players/openhuman/openhuman-platform-context.png"
+  }
+];
+
+const alfredScreenshots = [
+  {
+    src: "/images/players/alfred/alfred-platform-context.jpg",
+    alt: "Alfred docs homepage showing the install and View on GitHub actions, with the bat shield logo and the GitHub issues to PRs tagline",
+    caption: "Alfred docs site homepage at alfred.luminik.io.",
+    sourceName: "Alfred docs",
+    sourceUrl: "https://alfred.luminik.io/"
   }
 ];
 
@@ -487,6 +526,61 @@ export const orchestrators: OrchestratorEntry[] = [
     )
   },
   {
+    slug: "alfred",
+    rank: 30,
+    title: "Alfred",
+    githubRepo: "luminik-io/alfred-os",
+    accent: "blue",
+    mark: {
+      kind: "image",
+      src: "/logos/alfred.png",
+      label: "Alfred logo",
+      surface: "dark"
+    },
+    summary:
+      "GitHub issues, in. Pull requests, out. A self-hosted runtime for autonomous Claude Code and Codex agents on the CLI subscriptions you already pay for.",
+    note:
+      "Centers orchestration on scheduled agent firings, GitHub label state, per-firing git worktrees, role-based engine routing, and Slack reporting.",
+    overview: [
+      "Alfred is an MIT-licensed Python runtime for autonomous engineering agents. Each agent is a narrow role (planner, implementer, reviewer, tester) backed by your own Claude Code or Codex CLI subscription. No provider API keys, no cloud agent service, no second LLM bill.",
+      "Work intake is GitHub-native: scoped issues and specs define what to do, labels (agent:implement, agent:in-flight, agent:pr-open, agent:done) hold state, and each firing runs in a fresh git worktree. Results land as reviewed pull requests, follow-up tests, and Slack summaries.",
+      "Alfred is the operating layer around the CLI coding agents you already use: scoped intake, role-based engine routing, worktree isolation, bounded autonomy, review handoff, and scheduled runs across one repo or many."
+    ],
+    bestFor: ["GitHub issue to pull request workflows", "Multi-repo engineering agent fleets", "Routing Claude Code and Codex by role"],
+    tags: ["autonomous agents", "engineering agents", "Claude Code", "Codex", "GitHub issues", "specs", "worktrees", "pull requests", "self-hosted", "MIT"],
+    links: [
+      {
+        label: "Docs",
+        href: "https://alfred.luminik.io/",
+        emphasis: "primary"
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/luminik-io/alfred-os"
+      }
+    ],
+    screenshots: alfredScreenshots,
+    agentAnalytics: agentAnalyticsSection(
+      "alfred",
+      "Alfred",
+      "Alfred can ship product changes, docs, tests, and review fixes through scheduled agent runs. Agent Analytics gives a follow-up agent traffic, source, funnel, and conversion data to judge whether the shipped change helped users.",
+      ["Alfred claims a scoped GitHub issue and runs a Claude Code or Codex job in an isolated worktree", "the resulting PR ships a product change, docs update, test coverage, or review fix", "the deployed surface reports visits, sources, signup, activation, retention, funnels, and conversion events to Agent Analytics", "a follow-up agent compares the changed path with the prior period and reports what improved or regressed"],
+      "Install Agent Analytics on the app, docs, or marketing surface affected by Alfred-created PRs. Alfred's GitHub labels and shipped summaries provide the work log; Agent Analytics supplies user behavior after deploy.",
+      "changes shipped by Alfred agents",
+      alfredScreenshots,
+      [
+        {
+          label: "Alfred docs",
+          href: "https://alfred.luminik.io/"
+        },
+        {
+          label: "Alfred GitHub",
+          href: "https://github.com/luminik-io/alfred-os"
+        }
+      ]
+    )
+  },
+  {
     slug: "vibe-kanban",
     rank: 20,
     title: "Vibe Kanban",
@@ -546,6 +640,50 @@ export const orchestrators: OrchestratorEntry[] = [
           href: "https://docs.agentanalytics.sh/api/"
         }
       ]
+    )
+  },
+  {
+    slug: "parallel-code",
+    rank: 27,
+    title: "Parallel Code",
+    githubRepo: "johannesjo/parallel-code",
+    accent: "cyan",
+    mark: {
+      kind: "monogram",
+      value: "PC",
+      label: "Parallel Code monogram"
+    },
+    summary:
+      "An open-source desktop workspace for dispatching, monitoring, reviewing, and merging parallel coding-agent work across isolated git worktrees.",
+    note:
+      "Centers orchestration on local parallel coding-agent sessions, automatic branch and worktree isolation, real embedded terminals, diff review, and merge flow.",
+    overview: [
+      "Parallel Code is an MIT-licensed desktop app for orchestrating multiple AI coding agents from one local interface. It supports Claude Code, Codex CLI, Gemini CLI, GitHub Copilot CLI, and other terminal-based coding agents.",
+      "Each task runs in its own git branch and worktree so agents can work concurrently without conflicting with one another. The app embeds real terminals, tracks task status, surfaces diffs, and helps review or merge completed work.",
+      "It belongs in Open Orchestrators because the product is directly about parallel coding-agent execution, worktree isolation, task coordination, review, and local operator control."
+    ],
+    bestFor: ["Parallel coding-agent sessions", "Git worktree isolation", "Terminal-native review and merge flow"],
+    tags: ["coding agents", "desktop", "worktrees", "parallel execution", "MIT"],
+    links: [
+      {
+        label: "Website",
+        href: "https://parallelcode.app/",
+        emphasis: "primary"
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/johannesjo/parallel-code"
+      }
+    ],
+    screenshots: parallelCodeScreenshots,
+    agentAnalytics: agentAnalyticsSection(
+      "parallel-code",
+      "Parallel Code",
+      "Parallel Code helps builders run several coding agents against isolated worktrees. Agent Analytics measures whether the shipped branch, docs update, onboarding change, product surface, or growth experiment improved user behavior after merge.",
+      ["a builder uses Parallel Code to run multiple coding agents against a feature, docs update, onboarding path, app surface, or growth experiment", "the selected worktree is reviewed, merged, and deployed", "the changed surface reports visits, sources, CTA clicks, signup, activation, retention, or task-completion events to Agent Analytics", "a follow-up agent fetches Agent Analytics results and turns user behavior into the next task or experiment"],
+      "Instrument the deployed surface affected by the merged worktree. Agent Analytics reads product and web events after the Parallel Code-managed change ships; it does not replace terminal logs, git diffs, or agent transcripts.",
+      "Parallel Code-managed page, docs path, traffic source, CTA click, signup, activation event, retention signal, or shipped experiment",
+      parallelCodeScreenshots
     )
   },
   {
@@ -2167,6 +2305,50 @@ export const orchestrators: OrchestratorEntry[] = [
       "Use Agent Analytics after Fusion tasks ship user-facing work so completed tasks and missions are judged by reported web and product outcomes, not only board status.",
       "Fusion-built page, traffic source, signup, activation event, retention change, or shipped task",
       fusionScreenshots
+    slug: "the-perfect-orchestrator",
+    rank: 30,
+    title: "the-perfect-orchestrator",
+    githubRepo: "daman8271/the-perfect-orchestrator",
+    accent: "emerald",
+    mark: {
+      kind: "monogram",
+      value: "PO",
+      label: "the-perfect-orchestrator monogram"
+    },
+    summary:
+      "A pure bash and tmux fleet harness where one lead Claude Code session spawns, briefs, monitors, and adversarially verifies multiple autonomous Claude Code worker sessions.",
+    note:
+      "Centers orchestration on a lead-session pattern: workers run as tmux panes, coordination happens through plain files on disk, and worker results pass adversarial verification before being accepted.",
+    overview: [
+      "the-perfect-orchestrator is an MIT-licensed bash and tmux harness for running one lead Claude Code session that commands multiple autonomous worker sessions. There are no daemons or services: workers are tmux panes, briefs and results are markdown files, and inter-agent messaging is a plain-file bus.",
+      "It belongs in Open Orchestrators because the orchestration layer is the product: spawning and briefing workers, monitoring their panes, file-based coordination, and adversarial verification of worker output. It also installs as a Claude Code plugin that ships an /orch skill. The project is early (v0.2.0) and publishes a recorded real fleet run with raw transcripts as its public verification source."
+    ],
+    bestFor: ["Parallel Claude Code worker fleets", "File-based agent coordination", "Adversarial verification of agent results"],
+    tags: ["bash", "tmux", "claude code", "adversarial verification", "MIT"],
+    links: [
+      {
+        label: "GitHub",
+        href: "https://github.com/daman8271/the-perfect-orchestrator",
+        emphasis: "primary"
+      },
+      {
+        label: "Website",
+        href: "https://the-perfect-orchestrator.vercel.app/"
+      },
+      {
+        label: "Recorded fleet run",
+        href: "https://github.com/daman8271/the-perfect-orchestrator/tree/main/docs/realrun-2026-06-06"
+      }
+    ],
+    screenshots: [],
+    agentAnalytics: agentAnalyticsSection(
+      "the-perfect-orchestrator",
+      "the-perfect-orchestrator",
+      "the-perfect-orchestrator runs a lead Claude Code session that ships work through verified tmux worker fleets. Agent Analytics measures whether the surfaces those fleets change actually move users.",
+      ["a lead session briefs tmux workers to change a website, docs flow, onboarding path, app surface, demo, or experiment", "the changed surface reports visits, sources, CTA clicks, signup, activation, retention, or task-completion events to Agent Analytics", "the lead session or a follow-up worker fetches Agent Analytics results after deployment", "the next fleet run is briefed from measured user outcomes instead of only verified task completion"],
+      "Instrument the deployed surface affected by fleet-managed commits. Agent Analytics reads product and web events after the change ships; it does not replace the harness's own bus messages, worker transcripts, or adversarial verification verdicts.",
+      "fleet-managed page, docs path, traffic source, CTA click, signup, activation event, retention signal, or shipped experiment",
+      []
     )
   }
 ];
