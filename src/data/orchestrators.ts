@@ -125,6 +125,18 @@ export const orchestrationTools: OrchestrationToolEntry[] = [
     tags: ["observability", "OpenClaw", "tracing"]
   },
   {
+    slug: "agenttrace",
+    title: "agenttrace",
+    url: "https://github.com/luoyuctl/agenttrace",
+    sourceName: "agenttrace GitHub repository",
+    mark: "AT",
+    summary:
+      "Local TUI observability for AI coding-agent sessions, tokens, cost, tool failures, latency, anomalies, diffs, and CI evidence.",
+    note:
+      "Parses local logs from Claude Code, Codex CLI, Gemini CLI, Aider, Cursor exports, OpenClaw, and related coding agents so builders can inspect session health without sending prompts or code to a hosted tracing service.",
+    tags: ["observability", "coding agents", "TUI", "local-first"]
+  },
+  {
     slug: "lanes",
     title: "Lanes",
     url: "https://lanes.sh/",
@@ -150,6 +162,19 @@ export const orchestrationTools: OrchestrationToolEntry[] = [
       "Runs Claude Code, Codex, Cursor, and other coding agents behind a shared workbench with containerized disk/network isolation, tasks, diffs, artifacts, unified transcripts, and review. Tracked as an ADE/workspace layer for teams standardizing agent work, not as a product analytics system.",
     tags: ["ADE", "coding agents", "containers", "transcripts", "review"],
     ctaLabel: "Open ctx"
+  },
+  {
+    slug: "open-agent-relay",
+    title: "Open Agent Relay",
+    url: "https://github.com/ShakespeareLabs/open-agent-relay",
+    sourceName: "Open Agent Relay GitHub repository",
+    mark: "OAR",
+    summary:
+      "Apache-2.0 relay for exposing existing local agents as capabilities callable by teammates and other agents over a trusted LAN.",
+    note:
+      "Keeps source code, runtime dependencies, prompts, and credentials on the publishing machine while callers use a lightweight CLI with JSON output, agent identity checks, meaningful exit codes, and bounded conversations. Tracked as an agent capability-sharing and coordination-adjacent tool, not as an orchestrator runtime.",
+    tags: ["open source", "local-first", "agent relay", "capability sharing", "CLI"],
+    ctaLabel: "Open relay"
   }
 ];
 
@@ -181,6 +206,19 @@ export const governanceTools: OrchestrationToolEntry[] = [
       "Adds scope checks, budget caps, human approval tokens, loop detection, agent presence and halt handling, behavioral contracts, and HMAC-chained audit trails for actions routed through the SDK. Tracked as agent-friendly tooling, not an orchestrator runtime.",
     tags: ["open source", "governance", "agent safety", "approvals", "audit trail", "Postgres", "Python"],
     ctaLabel: "Open governance tool"
+  },
+  {
+    slug: "commonground-kernel",
+    title: "CommonGround Kernel",
+    url: "https://github.com/Intelligent-Internet/CommonGround",
+    sourceName: "CommonGround GitHub repository",
+    mark: "CG",
+    summary:
+      "Apache-2.0 public-fact and causal-coordination kernel for human-agent and multi-agent work.",
+    note:
+      "Preserves durable Turn-owned work records, handoff facts, claim fencing, causal lineage, and pull-first recovery across agent runtimes without acting as the orchestrator itself.",
+    tags: ["open source", "Apache-2.0", "public facts", "coordination substrate", "handoffs", "causal lineage", "Python"],
+    ctaLabel: "Open kernel"
   },
   {
     slug: "veto",
@@ -398,6 +436,8 @@ const vibeKanbanScreenshots = [
 
 const narranexusScreenshots = [
   screenshot("narranexus", "NarraNexus", "NarraNexus GitHub repository", "https://github.com/NetMindAI-Open/NarraNexus")
+const parallelCodeScreenshots = [
+  screenshot("parallel-code", "Parallel Code", "Parallel Code website", "https://parallelcode.app/")
 ];
 
 const augmentIntentScreenshots = [
@@ -423,16 +463,36 @@ const openHumanScreenshots = [
   }
 ];
 
+const alfredScreenshots = [
+  {
+    src: "/images/players/alfred/alfred-platform-context.jpg",
+    alt: "Alfred docs homepage showing the install and View on GitHub actions, with the bat shield logo and the GitHub issues to PRs tagline",
+    caption: "Alfred docs site homepage at alfred.luminik.io.",
+    sourceName: "Alfred docs",
+    sourceUrl: "https://alfred.luminik.io/"
+  }
+];
+
 const crewletScreenshots = [
   screenshot("crewlet", "Crewlet", "Crewlet website", "https://www.crewlet.io/")
 ];
 
+const agentSwarmScreenshots = [
+  screenshot("agent-swarm", "Agent Swarm", "Agent Swarm GitHub repository", "https://github.com/desplega-ai/agent-swarm")
 const agentRqScreenshots = [
   {
     ...screenshot("agentrq", "AgentRQ", "AgentRQ website", "https://agentrq.com/"),
     src: "/images/players/agentrq/agentrq-platform-context.png"
   }
 ];
+
+const fusionScreenshots = [
+  {
+    ...screenshot("fusion", "Fusion", "Fusion website", "https://runfusion.ai/"),
+    src: "/images/players/fusion/fusion-platform-context.png"
+  }
+];
+const agentlasOsScreenshots: OrchestratorScreenshot[] = [];
 
 export const orchestrators: OrchestratorEntry[] = [
   {
@@ -481,6 +541,92 @@ export const orchestrators: OrchestratorEntry[] = [
       "Install Agent Analytics on the project surface Superset helps you ship. The branch, worktree, or agent setup is secondary; the useful loop is that a later agent can read user behavior after the change lands.",
       "page, traffic source, signup, activation event, funnel step, retention signal, or growth experiment",
       supersetScreenshots
+    )
+  },
+  {
+    slug: "agent-teams",
+    rank: 30,
+    title: "Agent Teams",
+    githubRepo: "777genius/agent-teams-ai",
+    accent: "violet",
+    mark: { kind: "image", src: "/logos/agent-teams.png", label: "Agent Teams logo" },
+    summary: "A free desktop app for coordinating autonomous AI agent teams across major coding agents and model providers from a Kanban and review workflow.",
+    note: "Centers orchestration on high-level commands, autonomous task execution, agent-to-agent messaging, Kanban task management, cross-team communication, and built-in review surfaces.",
+    overview: [
+      "Agent Teams is a free, open-source desktop app for AI agent teams. The operator gives high-level commands while agents create tasks, work in parallel, message each other, and review code through a Kanban workflow.",
+      "It supports Claude Code, Codex, OpenCode, Cursor, Grok, GitHub Copilot, Kiro, Z.AI, MiniMax, and Kimi, starts with a free no-auth model, and can connect to more than 200 models across 75+ LLM providers.",
+      "It belongs in Open Orchestrators because the product focuses on the team-management layer around autonomous agents: task planning, live process visibility, message delivery, cross-team coordination, per-task logs, code review, and human control over approvals."
+    ],
+    bestFor: ["High-level delegation to AI agent teams", "Kanban-managed autonomous coding work", "Multi-runtime and multi-provider agent orchestration"],
+    tags: ["coding agents", "agent teams", "kanban", "code review", "desktop app", "open source"],
+    links: [
+      { label: "Website", href: "https://agentteams.live/", emphasis: "primary" },
+      { label: "GitHub", href: "https://github.com/777genius/agent-teams-ai" },
+      { label: "Releases", href: "https://github.com/777genius/agent-teams-ai/releases" },
+      { label: "Discord", href: "https://discord.gg/qtqSZSyuEc" }
+    ],
+    screenshots: agentTeamsScreenshots,
+    agentAnalytics: agentAnalyticsSection(
+      "agent-teams", "Agent Teams",
+      "Agent Teams helps builders delegate high-level goals to autonomous agent teams. Agent Analytics gives the follow-up agent visitor, source, funnel, and conversion data after those agent-built changes reach users.",
+      ["a builder uses Agent Teams to give a high-level command and let agents plan, implement, review, and ship a change", "the changed website, docs, app, onboarding path, demo, or support surface reports visits, sources, CTA clicks, signup, activation, retention, funnels, and experiment events to Agent Analytics", "a follow-up agent fetches the Agent Analytics results and compares the shipped path with the prior period", "the next Agent Teams task is scoped from measured user behavior, not only from task completion or code diff status"],
+      "Install Agent Analytics on the user-facing surface Agent Teams helps ship. The useful loop starts after an agent-built change lands and real users interact with it.",
+      "Agent Teams-built page, traffic source, CTA click, signup, activation event, funnel step, experiment, or shipped task", agentTeamsScreenshots
+    )
+  },
+  {
+    slug: "alfred",
+    rank: 30,
+    title: "Alfred",
+    githubRepo: "luminik-io/alfred-os",
+    accent: "blue",
+    mark: {
+      kind: "image",
+      src: "/logos/alfred.png",
+      label: "Alfred logo",
+      surface: "dark"
+    },
+    summary:
+      "GitHub issues, in. Pull requests, out. A self-hosted runtime for autonomous Claude Code and Codex agents on the CLI subscriptions you already pay for.",
+    note:
+      "Centers orchestration on scheduled agent firings, GitHub label state, per-firing git worktrees, role-based engine routing, and Slack reporting.",
+    overview: [
+      "Alfred is an MIT-licensed Python runtime for autonomous engineering agents. Each agent is a narrow role (planner, implementer, reviewer, tester) backed by your own Claude Code or Codex CLI subscription. No provider API keys, no cloud agent service, no second LLM bill.",
+      "Work intake is GitHub-native: scoped issues and specs define what to do, labels (agent:implement, agent:in-flight, agent:pr-open, agent:done) hold state, and each firing runs in a fresh git worktree. Results land as reviewed pull requests, follow-up tests, and Slack summaries.",
+      "Alfred is the operating layer around the CLI coding agents you already use: scoped intake, role-based engine routing, worktree isolation, bounded autonomy, review handoff, and scheduled runs across one repo or many."
+    ],
+    bestFor: ["GitHub issue to pull request workflows", "Multi-repo engineering agent fleets", "Routing Claude Code and Codex by role"],
+    tags: ["autonomous agents", "engineering agents", "Claude Code", "Codex", "GitHub issues", "specs", "worktrees", "pull requests", "self-hosted", "MIT"],
+    links: [
+      {
+        label: "Docs",
+        href: "https://alfred.luminik.io/",
+        emphasis: "primary"
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/luminik-io/alfred-os"
+      }
+    ],
+    screenshots: alfredScreenshots,
+    agentAnalytics: agentAnalyticsSection(
+      "alfred",
+      "Alfred",
+      "Alfred can ship product changes, docs, tests, and review fixes through scheduled agent runs. Agent Analytics gives a follow-up agent traffic, source, funnel, and conversion data to judge whether the shipped change helped users.",
+      ["Alfred claims a scoped GitHub issue and runs a Claude Code or Codex job in an isolated worktree", "the resulting PR ships a product change, docs update, test coverage, or review fix", "the deployed surface reports visits, sources, signup, activation, retention, funnels, and conversion events to Agent Analytics", "a follow-up agent compares the changed path with the prior period and reports what improved or regressed"],
+      "Install Agent Analytics on the app, docs, or marketing surface affected by Alfred-created PRs. Alfred's GitHub labels and shipped summaries provide the work log; Agent Analytics supplies user behavior after deploy.",
+      "changes shipped by Alfred agents",
+      alfredScreenshots,
+      [
+        {
+          label: "Alfred docs",
+          href: "https://alfred.luminik.io/"
+        },
+        {
+          label: "Alfred GitHub",
+          href: "https://github.com/luminik-io/alfred-os"
+        }
+      ]
     )
   },
   {
@@ -543,6 +689,50 @@ export const orchestrators: OrchestratorEntry[] = [
           href: "https://docs.agentanalytics.sh/api/"
         }
       ]
+    )
+  },
+  {
+    slug: "parallel-code",
+    rank: 27,
+    title: "Parallel Code",
+    githubRepo: "johannesjo/parallel-code",
+    accent: "cyan",
+    mark: {
+      kind: "monogram",
+      value: "PC",
+      label: "Parallel Code monogram"
+    },
+    summary:
+      "An open-source desktop workspace for dispatching, monitoring, reviewing, and merging parallel coding-agent work across isolated git worktrees.",
+    note:
+      "Centers orchestration on local parallel coding-agent sessions, automatic branch and worktree isolation, real embedded terminals, diff review, and merge flow.",
+    overview: [
+      "Parallel Code is an MIT-licensed desktop app for orchestrating multiple AI coding agents from one local interface. It supports Claude Code, Codex CLI, Gemini CLI, GitHub Copilot CLI, and other terminal-based coding agents.",
+      "Each task runs in its own git branch and worktree so agents can work concurrently without conflicting with one another. The app embeds real terminals, tracks task status, surfaces diffs, and helps review or merge completed work.",
+      "It belongs in Open Orchestrators because the product is directly about parallel coding-agent execution, worktree isolation, task coordination, review, and local operator control."
+    ],
+    bestFor: ["Parallel coding-agent sessions", "Git worktree isolation", "Terminal-native review and merge flow"],
+    tags: ["coding agents", "desktop", "worktrees", "parallel execution", "MIT"],
+    links: [
+      {
+        label: "Website",
+        href: "https://parallelcode.app/",
+        emphasis: "primary"
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/johannesjo/parallel-code"
+      }
+    ],
+    screenshots: parallelCodeScreenshots,
+    agentAnalytics: agentAnalyticsSection(
+      "parallel-code",
+      "Parallel Code",
+      "Parallel Code helps builders run several coding agents against isolated worktrees. Agent Analytics measures whether the shipped branch, docs update, onboarding change, product surface, or growth experiment improved user behavior after merge.",
+      ["a builder uses Parallel Code to run multiple coding agents against a feature, docs update, onboarding path, app surface, or growth experiment", "the selected worktree is reviewed, merged, and deployed", "the changed surface reports visits, sources, CTA clicks, signup, activation, retention, or task-completion events to Agent Analytics", "a follow-up agent fetches Agent Analytics results and turns user behavior into the next task or experiment"],
+      "Instrument the deployed surface affected by the merged worktree. Agent Analytics reads product and web events after the Parallel Code-managed change ships; it does not replace terminal logs, git diffs, or agent transcripts.",
+      "Parallel Code-managed page, docs path, traffic source, CTA click, signup, activation event, retention signal, or shipped experiment",
+      parallelCodeScreenshots
     )
   },
   {
@@ -2149,6 +2339,58 @@ export const orchestrators: OrchestratorEntry[] = [
       {
         label: "Website",
         href: "https://github.com/NetMindAI-Open/NarraNexus",
+    slug: "fusion",
+    rank: 31,
+    title: "Fusion",
+    githubRepo: "Runfusion/Fusion",
+    accent: "blue",
+    mark: {
+      kind: "image",
+      src: "/logos/fusion.png",
+      label: "Fusion logo"
+    },
+    summary:
+      "An open-source, multi-node agent orchestrator where a planning agent turns a plain-language task into a PROMPT.md plan, then runs plan, review, execute, and review gates for each task in an isolated git worktree, controllable from desktop, web, mobile, or the fn CLI.",
+    note: "Centers orchestration on a kanban board with per-task worktrees, workflow approval gates, hierarchical missions, and any local or cloud model across a synced multi-node mesh.",
+    overview: [
+      "Fusion is an open-source, multi-node agent orchestrator that plans tasks into PROMPT.md specs and runs them through plan, review, execute, and review gates inside isolated git worktrees, controllable from desktop, web, mobile, or the fn CLI.",
+      "It belongs in Open Orchestrators because it coordinates many agents and tasks as shared board state across a synced mesh of peer nodes, with hierarchical missions, inter-agent messaging, and per-project model lanes for local and cloud providers."
+    ],
+    bestFor: ["Parallel coding agents", "Worktree isolation", "Hierarchical missions and planning"],
+    tags: ["coding agents", "worktree isolation", "missions", "multi-node mesh", "open source"],
+    links: [
+      {
+        label: "Website",
+        href: "https://runfusion.ai/",
+    slug: "agent-swarm",
+    rank: 30,
+    title: "Agent Swarm",
+    githubRepo: "desplega-ai/agent-swarm",
+    accent: "amber",
+    mark: {
+      kind: "image",
+      src: "/logos/agent-swarm.png",
+      label: "Agent Swarm logo"
+    },
+    summary:
+      "An MIT-licensed lead/worker orchestration framework where a lead agent receives tasks from Slack, GitHub, GitLab, Linear, Jira, email, WhatsApp, or the API and delegates to worker agents running in isolated Docker environments with persistent memory and identity.",
+    note:
+      "Centers orchestration on a lead/worker swarm with persistent SOUL/IDENTITY identity, vector-searchable compounding memory, DAG workflows with human-in-the-loop gates, scheduled tasks, MCP servers, skills, and harness-agnostic execution across Claude Code, OpenAI Codex, pi-mono, Devin, Claude Managed Agents, and opencode.",
+    overview: [
+      "Agent Swarm is an MIT-licensed orchestration framework from Desplega Labs. A lead agent receives work from Slack, GitHub, GitLab, Linear, Jira, email, WhatsApp, or the HTTP API, breaks it down, and delegates to worker agents running in isolated Docker environments. Workers ship changes back as pull requests, Slack/email replies, or published pages.",
+      "It belongs in Open Orchestrators because the swarm itself is the operating surface: workers share a vector-searchable memory and persistent identity files (SOUL.md, IDENTITY.md, CLAUDE.md), the workflow engine runs DAG-based automation with approval gates and structured I/O, scheduled cron-based tasks handle standing work, and skills plus per-agent MCP servers with scope cascade give agents reusable procedural knowledge.",
+      "Public materials describe harness-agnostic execution across Claude Code, OpenAI Codex, pi-mono, Devin, Claude Managed Agents, and opencode, follow-up continuity that inherits bounded prior-task context even on providers without native session resume, DB-backed pages with public / authed / password modes and version history, a Redis-like KV store with auto-scoped context per Slack thread or PR or Linear issue, and a real-time dashboard at app.agent-swarm.dev for monitoring agents, tasks, and inter-agent chat."
+    ],
+    bestFor: [
+      "Lead/worker swarm orchestration",
+      "Multi-channel inbound (Slack, GitHub, Linear, email, API)",
+      "Persistent identity and compounding memory across sessions"
+    ],
+    tags: ["lead/worker", "swarm runtime", "Docker", "memory", "workflows", "MCP", "open source"],
+    links: [
+      {
+        label: "Website",
+        href: "https://agent-swarm.dev",
         emphasis: "primary"
       },
       {
@@ -2169,6 +2411,161 @@ export const orchestrators: OrchestratorEntry[] = [
       "Instrument the project surface that NarraNexus agents affect. Agent Analytics reads the reported web or product events; it does not replace NarraNexus internal logs or traces.",
       "NarraNexus-managed page, docs path, traffic source, CTA click, signup, activation event, retention signal, or shipped experiment",
       narranexusScreenshots
+        href: "https://github.com/Runfusion/Fusion"
+      }
+    ],
+    screenshots: fusionScreenshots,
+    agentAnalytics: agentAnalyticsSection(
+      "fusion",
+      "Fusion",
+      "Fusion ships tasks autonomously through worktree-isolated workflow gates. Agent Analytics gives the next agent real visitor and conversion data after a merged task reaches a user-facing surface.",
+      ["a task is planned, executed, and reviewed through Fusion's workflow gates in an isolated worktree", "the merged change ships to the website, docs, app, onboarding flow, or support surface", "the changed surface reports visits, sources, signup, activation, retention, or funnel movement to Agent Analytics", "a follow-up agent fetches the outcome report and turns it into the next task or mission"],
+      "Use Agent Analytics after Fusion tasks ship user-facing work so completed tasks and missions are judged by reported web and product outcomes, not only board status.",
+      "Fusion-built page, traffic source, signup, activation event, retention change, or shipped task",
+      fusionScreenshots
+        href: "https://github.com/desplega-ai/agent-swarm"
+      },
+      {
+        label: "Docs",
+        href: "https://docs.agent-swarm.dev"
+      },
+      {
+        label: "Dashboard",
+        href: "https://app.agent-swarm.dev"
+      },
+      {
+        label: "Templates",
+        href: "https://templates.agent-swarm.dev"
+      },
+      {
+        label: "Discord",
+        href: "https://discord.gg/KZgfyyDVZa"
+      },
+      {
+        label: "Official X",
+        href: "https://x.com/desplegalabs"
+      }
+    ],
+    screenshots: agentSwarmScreenshots,
+    agentAnalytics: agentAnalyticsSection(
+      "agent-swarm",
+      "Agent Swarm",
+      "Agent Swarm runs a team of agents that ship work across Slack, PRs, and email. Agent Analytics gives the follow-up swarm visitor, source, funnel, and conversion data after those changes reach users.",
+      [
+        "an operator sends work to the swarm from Slack, GitHub, GitLab, Linear, Jira, email, WhatsApp, or the API",
+        "a lead agent delegates tasks to workers that ship the change to a website, docs site, app, onboarding flow, demo, or product surface",
+        "the changed surface reports visits, sources, CTA clicks, signup, activation, retention, funnels, and experiment events to Agent Analytics",
+        "a follow-up swarm agent fetches the Agent Analytics results, writes the outcome back to shared memory, and picks the next task from user behavior rather than only from inbound requests"
+      ],
+      "Install Agent Analytics on the surfaces the swarm ships changes to. Agent Analytics measures user behavior after deployment; it is not a replacement for the swarm's persistent memory, identity, workflows, scheduled tasks, or MCP/skill catalog.",
+      "swarm-built page, traffic source, CTA click, signup, activation event, funnel step, experiment, or shipped agent task",
+      agentSwarmScreenshots
+    slug: "the-perfect-orchestrator",
+    rank: 30,
+    title: "the-perfect-orchestrator",
+    githubRepo: "daman8271/the-perfect-orchestrator",
+    accent: "emerald",
+    mark: {
+      kind: "monogram",
+      value: "PO",
+      label: "the-perfect-orchestrator monogram"
+    },
+    summary:
+      "A pure bash and tmux fleet harness where one lead Claude Code session spawns, briefs, monitors, and adversarially verifies multiple autonomous Claude Code worker sessions.",
+    note:
+      "Centers orchestration on a lead-session pattern: workers run as tmux panes, coordination happens through plain files on disk, and worker results pass adversarial verification before being accepted.",
+    overview: [
+      "the-perfect-orchestrator is an MIT-licensed bash and tmux harness for running one lead Claude Code session that commands multiple autonomous worker sessions. There are no daemons or services: workers are tmux panes, briefs and results are markdown files, and inter-agent messaging is a plain-file bus.",
+      "It belongs in Open Orchestrators because the orchestration layer is the product: spawning and briefing workers, monitoring their panes, file-based coordination, and adversarial verification of worker output. It also installs as a Claude Code plugin that ships an /orch skill. The project is early (v0.2.0) and publishes a recorded real fleet run with raw transcripts as its public verification source."
+    ],
+    bestFor: ["Parallel Claude Code worker fleets", "File-based agent coordination", "Adversarial verification of agent results"],
+    tags: ["bash", "tmux", "claude code", "adversarial verification", "MIT"],
+    links: [
+      {
+        label: "GitHub",
+        href: "https://github.com/daman8271/the-perfect-orchestrator",
+        emphasis: "primary"
+      },
+      {
+        label: "Website",
+        href: "https://the-perfect-orchestrator.vercel.app/"
+      },
+      {
+        label: "Recorded fleet run",
+        href: "https://github.com/daman8271/the-perfect-orchestrator/tree/main/docs/realrun-2026-06-06"
+      }
+    ],
+    screenshots: [],
+    agentAnalytics: agentAnalyticsSection(
+      "the-perfect-orchestrator",
+      "the-perfect-orchestrator",
+      "the-perfect-orchestrator runs a lead Claude Code session that ships work through verified tmux worker fleets. Agent Analytics measures whether the surfaces those fleets change actually move users.",
+      ["a lead session briefs tmux workers to change a website, docs flow, onboarding path, app surface, demo, or experiment", "the changed surface reports visits, sources, CTA clicks, signup, activation, retention, or task-completion events to Agent Analytics", "the lead session or a follow-up worker fetches Agent Analytics results after deployment", "the next fleet run is briefed from measured user outcomes instead of only verified task completion"],
+      "Instrument the deployed surface affected by fleet-managed commits. Agent Analytics reads product and web events after the change ships; it does not replace the harness's own bus messages, worker transcripts, or adversarial verification verdicts.",
+      "fleet-managed page, docs path, traffic source, CTA click, signup, activation event, retention signal, or shipped experiment",
+      []
+    )
+  },
+  {
+    slug: "agentlas-os",
+    rank: 31,
+    title: "Agentlas OS",
+    githubRepo: "agentlas-ai/Agentlas-OS",
+    accent: "cyan",
+    mark: {
+      kind: "monogram",
+      value: "AO",
+      label: "Agentlas OS monogram"
+    },
+    summary:
+      "An Apache-2.0 local-first agent operation environment that builds portable agent and team packages and runs them across supported coding hosts.",
+    note:
+      "Centers orchestration on portable package contracts, explicit roles, host-owned runtime selection, governed memory and policy boundaries, MCP/A2A interoperability, and verification receipts.",
+    overview: [
+      "Agentlas OS is an Apache-2.0 agent operation environment for building, storing, borrowing, and running specialist agents and multi-agent teams. Its public package contract carries roles, tools, memory boundaries, permissions, routing, and verification requirements rather than binding an agent to one model workspace.",
+      "It belongs in Open Orchestrators because its core surface composes explicit agent roles into temporary task forces, validates exact runtime bundles, and executes them through supported hosts while keeping local project context, credentials, and permissions on the operator's machine."
+    ],
+    bestFor: [
+      "Portable agent and team packages",
+      "Cross-host coding-agent orchestration",
+      "Local-first governed agent operations"
+    ],
+    tags: ["open source", "Apache-2.0", "agent OS", "multi-agent", "MCP", "A2A", "local-first"],
+    links: [
+      {
+        label: "GitHub",
+        href: "https://github.com/agentlas-ai/Agentlas-OS",
+        emphasis: "primary"
+      },
+      {
+        label: "Website",
+        href: "https://agentlas.cloud/"
+      },
+      {
+        label: "Releases",
+        href: "https://github.com/agentlas-ai/Agentlas-OS/releases"
+      }
+    ],
+    screenshots: agentlasOsScreenshots,
+    agentAnalytics: agentAnalyticsSection(
+      "agentlas-os",
+      "Agentlas OS",
+      "Agentlas OS can coordinate specialist agents that ship pages, docs, onboarding, apps, and experiments. Agent Analytics gives a follow-up agent user-facing outcome data after that work reaches users.",
+      [
+        "an Agentlas OS task force builds and ships a user-facing change",
+        "the changed surface reports visits, sources, CTA clicks, signup, activation, retention, funnels, or experiment events to Agent Analytics",
+        "a follow-up Agentlas OS agent fetches the Agent Analytics results after deployment",
+        "the next task force is scoped from measured user outcomes rather than only execution receipts"
+      ],
+      "Install Agent Analytics on the user-facing surface Agentlas OS agents change. Agent Analytics measures product and web outcomes after deployment; it does not replace Agentlas OS routing, package, policy, or execution receipts.",
+      "Agentlas OS-built page, docs path, traffic source, CTA click, signup, activation event, funnel step, experiment, or shipped task",
+      agentlasOsScreenshots,
+      [
+        {
+          label: "Agent Analytics skill repository",
+          href: "https://github.com/Agent-Analytics/skills"
+        }
+      ]
     )
   }
 ];
